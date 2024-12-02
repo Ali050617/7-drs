@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars List</title>
+</head>
+<body>
+    <h1>Cars</h1>
+    <ul>
+        {% for cars in cars %}
+            <li>{{ cars.name }}</li>
+            <li>{{ cars.model }}</li>
+            <li>{{ cars.year }}</li>
+        {% empty %}
+            <li>No cars available</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'cars:cars_create' %}">Create New Car</a>
+</body>
+</html>
